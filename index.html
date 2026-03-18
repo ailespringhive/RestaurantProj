@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikko — Fine Dining Restaurant</title>
+  <meta name="description" content="Nikko is a fine dining restaurant offering seasonal cuisine crafted with locally sourced ingredients. Reserve your table today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Header / Navbar ===== -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="#" class="logo">Nikko</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reservation" class="nav-reserve-btn">Reserve</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="images/hero.png" alt="Beautifully plated gourmet dish" loading="eager">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Est. 2018 · Fine Dining</div>
+      <h1>Where Every Dish Tells a Story</h1>
+      <p>Experience seasonal cuisine crafted with passion, local ingredients, and an unwavering commitment to culinary artistry.</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn-primary">Explore Menu</a>
+        <a href="#reservation" class="btn-outline">Reserve a Table</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== About Section ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image animate-on-scroll">
+          <img src="images/interior.png" alt="Elegant restaurant interior with warm lighting">
+        </div>
+        <div class="about-content animate-on-scroll">
+          <span class="section-label">Our Story</span>
+          <h2 class="section-title">A Passion for Unforgettable Flavors</h2>
+          <p class="section-subtitle">
+            Nikko was born from a love of honest cooking and warm hospitality. Our chefs partner with local farms and fisheries to bring you dishes that celebrate the season — bold, refined, and always from the heart.
+          </p>
+          <p class="section-subtitle" style="margin-top: 16px;">
+            Every evening, our candlelit dining room becomes a stage for flavors that surprise and delight, paired with wines selected from boutique vineyards around the world.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <h3>8+</h3>
+              <p>Years of Excellence</p>
+            </div>
+            <div class="stat">
+              <h3>30k</h3>
+              <p>Happy Guests</p>
+            </div>
+            <div class="stat">
+              <h3>15</h3>
+              <p>Awards Won</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Menu Section ===== -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="menu-header animate-on-scroll">
+        <span class="section-label">Our Menu</span>
+        <h2 class="section-title">Seasonal Selections</h2>
+        <p class="section-subtitle">Dishes inspired by the finest ingredients each season has to offer.</p>
+      </div>
+
+      <div class="menu-tabs animate-on-scroll">
+        <button class="menu-tab active" data-category="all">All</button>
+        <button class="menu-tab" data-category="starters">Starters</button>
+        <button class="menu-tab" data-category="mains">Mains</button>
+        <button class="menu-tab" data-category="desserts">Desserts</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- Starters -->
+        <div class="menu-card animate-on-scroll" data-category="starters">
+          <img src="images/seafood.png" alt="Seared Scallops" class="menu-card-img">
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3>Seared Scallops</h3>
+              <span class="menu-card-price">$24</span>
+            </div>
+            <p class="menu-card-desc">Pan-seared diver scallops with cauliflower purée, crispy pancetta, and brown butter.</p>
+            <span class="menu-card-tag">Chef's Pick</span>
+          </div>
+        </div>
+
+        <div class="menu-card animate-on-scroll" data-category="starters">
+          <img src="images/pasta.png" alt="Burrata Salad" class="menu-card-img">
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3>Heirloom Burrata</h3>
+              <span class="menu-card-price">$18</span>
+            </div>
+            <p class="menu-card-desc">Creamy burrata with heirloom tomatoes, basil oil, and aged balsamic reduction.</p>
+          </div>
+        </div>
+
+        <!-- Mains -->
+        <div class="menu-card animate-on-scroll" data-category="mains">
+          <img src="images/steak.png" alt="Dry-Aged Ribeye" class="menu-card-img">
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3>Dry-Aged Ribeye</h3>
+              <span class="menu-card-price">$52</span>
+            </div>
+            <p class="menu-card-desc">45-day dry-aged prime ribeye with truffle pommes purée and red wine jus.</p>
+            <span class="menu-card-tag">Signature</span>
+          </div>
+        </div>
+
+        <div class="menu-card animate-on-scroll" data-category="mains">
+          <img src="images/seafood.png" alt="Pan-Seared Salmon" class="menu-card-img">
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3>Pan-Seared Salmon</h3>
+              <span class="menu-card-price">$38</span>
+            </div>
+            <p class="menu-card-desc">Wild-caught salmon with lemon risotto, asparagus, and dill beurre blanc.</p>
+          </div>
+        </div>
+
+        <div class="menu-card animate-on-scroll" data-category="mains">
+          <img src="images/pasta.png" alt="Lobster Linguine" class="menu-card-img">
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3>Lobster Linguine</h3>
+              <span class="menu-card-price">$44</span>
+            </div>
+            <p class="menu-card-desc">Fresh linguine tossed with lobster, cherry tomatoes, garlic, and chili in a white wine sauce.</p>
+          </div>
+        </div>
+
+        <div class="menu-card animate-on-scroll" data-category="mains">
+          <img src="images/steak.png" alt="Lamb Rack" class="menu-card-img">
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3>Herb-Crusted Lamb</h3>
+              <span class="menu-card-price">$46</span>
+            </div>
+            <p class="menu-card-desc">New Zealand lamb rack with rosemary crust, roasted root vegetables, and mint gremolata.</p>
+          </div>
+        </div>
+
+        <!-- Desserts -->
+        <div class="menu-card animate-on-scroll" data-category="desserts">
+          <img src="images/dessert.png" alt="Dark Chocolate Fondant" class="menu-card-img">
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3>Chocolate Fondant</h3>
+              <span class="menu-card-price">$16</span>
+            </div>
+            <p class="menu-card-desc">Warm Valrhona dark chocolate fondant with vanilla bean ice cream and gold leaf.</p>
+            <span class="menu-card-tag">Popular</span>
+          </div>
+        </div>
+
+        <div class="menu-card animate-on-scroll" data-category="desserts">
+          <img src="images/dessert.png" alt="Crème Brûlée" class="menu-card-img">
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3>Crème Brûlée</h3>
+              <span class="menu-card-price">$14</span>
+            </div>
+            <p class="menu-card-desc">Classic Madagascar vanilla crème brûlée with caramelized sugar crust and fresh berries.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Specials Banner ===== -->
+  <section class="specials-banner">
+    <div class="container">
+      <div class="specials-inner animate-on-scroll">
+        <span class="section-label">This Weekend</span>
+        <h2 class="section-title">Chef's Tasting Menu — $95 per guest</h2>
+        <p class="section-subtitle">A curated five-course journey through the season's finest flavors, paired with hand-selected wines from our cellar.</p>
+        <a href="#reservation" class="btn-primary" style="margin-top: 8px;">Book Your Experience</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Gallery Section ===== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="gallery-header animate-on-scroll">
+        <span class="section-label">Gallery</span>
+        <h2 class="section-title">The Nikko Experience</h2>
+      </div>
+      <div class="gallery-grid animate-on-scroll">
+        <div class="gallery-item">
+          <img src="images/interior.png" alt="Restaurant ambiance" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="images/steak.png" alt="Steak dish" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="images/pasta.png" alt="Pasta dish" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="images/dessert.png" alt="Dessert" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="images/seafood.png" alt="Seafood" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Reservation / Contact Section ===== -->
+  <section class="reservation" id="reservation">
+    <div class="container">
+      <div class="reservation-grid">
+        <div class="reservation-info animate-on-scroll">
+          <span class="section-label">Contact</span>
+          <h2>Reserve Your Table</h2>
+          <p>Whether it's an intimate dinner for two or a special celebration, we'd love to welcome you. Get in touch or fill out the form to secure your spot.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <h4>Address</h4>
+                <p>42 Oakwood Avenue, Brooklyn, NY 11201</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <h4>Phone</h4>
+                <p>(212) 555-0183</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">🕐</div>
+              <div>
+                <h4>Hours</h4>
+                <p>Tue – Sun: 5:30 PM – 11:00 PM<br>Mon: Closed</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div>
+                <h4>Email</h4>
+                <p>hello@emberandoak.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reservation-form animate-on-scroll">
+          <h3>Make a Reservation</h3>
+          <p>Fill out the form and we'll confirm your booking within the hour.</p>
+          <form id="reservationForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" placeholder="Jane" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" placeholder="Doe" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="jane@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" placeholder="(212) 555-0100">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" required>
+              </div>
+              <div class="form-group">
+                <label for="time">Time</label>
+                <select id="time" required>
+                  <option value="" disabled selected>Select time</option>
+                  <option>5:30 PM</option>
+                  <option>6:00 PM</option>
+                  <option>6:30 PM</option>
+                  <option>7:00 PM</option>
+                  <option>7:30 PM</option>
+                  <option>8:00 PM</option>
+                  <option>8:30 PM</option>
+                  <option>9:00 PM</option>
+                  <option>9:30 PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="guests">Number of Guests</label>
+              <select id="guests" required>
+                <option value="" disabled selected>Select guests</option>
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+                <option>5 Guests</option>
+                <option>6 Guests</option>
+                <option>7+ Guests</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="notes">Special Requests</label>
+              <textarea id="notes" placeholder="Allergies, celebrations, seating preferences..."></textarea>
+            </div>
+            <button type="submit" class="form-submit">Request Reservation</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">Nikko</a>
+          <p>Fine dining crafted with seasonal ingredients, warm hospitality, and a love for culinary artistry since 2018.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reservation">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <ul>
+            <li><a>Tue – Fri: 5:30 – 11 PM</a></li>
+            <li><a>Sat – Sun: 5:00 – 11 PM</a></li>
+            <li><a>Monday: Closed</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter / X</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nikko. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="social-link" aria-label="Facebook">📘</a>
+          <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
