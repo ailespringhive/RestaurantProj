@@ -1,0 +1,142 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Nikko is a fine dining restaurant offering seasonal cuisine crafted with locally sourced ingredients.' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <slot />
+
+  <script>
+    // --- Header scroll effect ---
+    const header = document.getElementById('header');
+    if (header) {
+      const onScroll = () => {
+        header.classList.toggle('scrolled', window.scrollY > 60);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    // --- Mobile hamburger menu ---
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('open');
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('open');
+        });
+      });
+    }
+
+    // --- Menu tab filtering ---
+    const menuTabs = document.querySelectorAll('.menu-tab');
+    const menuCards = document.querySelectorAll('.menu-card');
+    menuTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        menuTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const category = tab.dataset.category;
+        menuCards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = '';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            requestAnimationFrame(() => {
+              card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            });
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // --- Scroll-triggered animations ---
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    animatedElements.forEach(el => observer.observe(el));
+
+    // --- Active nav link highlight ---
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-links a:not(.nav-reserve-btn)');
+    const highlightNav = () => {
+      const scrollY = window.scrollY + 120;
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+        if (scrollY >= top && scrollY < top + height) {
+          navItems.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    };
+    window.addEventListener('scroll', highlightNav, { passive: true });
+
+    // --- Reservation form ---
+    const form = document.getElementById('reservationForm') as HTMLFormElement | null;
+    if (form) {
+      const dateInput = document.getElementById('date') as HTMLInputElement | null;
+      if (dateInput) {
+        dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
+      }
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const submitBtn = form.querySelector('.form-submit') as HTMLButtonElement;
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.7';
+        setTimeout(() => {
+          submitBtn.textContent = '✓ Reservation Requested!';
+          submitBtn.style.background = '#16a34a';
+          submitBtn.style.opacity = '1';
+          setTimeout(() => {
+            form.reset();
+            submitBtn.textContent = originalText;
+            submitBtn.style.background = '';
+            submitBtn.disabled = false;
+          }, 3000);
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

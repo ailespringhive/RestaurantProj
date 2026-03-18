@@ -1,37 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nikko — Fine Dining Restaurant</title>
-  <meta name="description" content="Nikko is a fine dining restaurant offering seasonal cuisine crafted with locally sourced ingredients. Reserve your table today.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
 
-  <!-- ===== Header / Navbar ===== -->
-  <header class="header" id="header">
-    <div class="container">
-      <a href="#" class="logo">Nikko</a>
-      <nav class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#reservation" class="nav-reserve-btn">Reserve</a>
-      </nav>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+<Layout title="Nikko — Fine Dining Restaurant">
+  <Header />
 
   <!-- ===== Hero Section ===== -->
   <section class="hero" id="hero">
     <div class="hero-bg">
-      <img src="images/hero.png" alt="Beautifully plated gourmet dish" loading="eager">
+      <img src="/images/hero.png" alt="Beautifully plated gourmet dish">
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -54,7 +33,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-image animate-on-scroll">
-          <img src="images/interior.png" alt="Elegant restaurant interior with warm lighting">
+          <img src="/images/interior.png" alt="Elegant restaurant interior with warm lighting">
         </div>
         <div class="about-content animate-on-scroll">
           <span class="section-label">Our Story</span>
@@ -101,9 +80,8 @@
       </div>
 
       <div class="menu-grid" id="menuGrid">
-        <!-- Starters -->
         <div class="menu-card animate-on-scroll" data-category="starters">
-          <img src="images/seafood.png" alt="Seared Scallops" class="menu-card-img">
+          <img src="/images/seafood.png" alt="Seared Scallops" class="menu-card-img">
           <div class="menu-card-content">
             <div class="menu-card-header">
               <h3>Seared Scallops</h3>
@@ -115,7 +93,7 @@
         </div>
 
         <div class="menu-card animate-on-scroll" data-category="starters">
-          <img src="images/pasta.png" alt="Burrata Salad" class="menu-card-img">
+          <img src="/images/pasta.png" alt="Burrata Salad" class="menu-card-img">
           <div class="menu-card-content">
             <div class="menu-card-header">
               <h3>Heirloom Burrata</h3>
@@ -125,9 +103,8 @@
           </div>
         </div>
 
-        <!-- Mains -->
         <div class="menu-card animate-on-scroll" data-category="mains">
-          <img src="images/steak.png" alt="Dry-Aged Ribeye" class="menu-card-img">
+          <img src="/images/steak.png" alt="Dry-Aged Ribeye" class="menu-card-img">
           <div class="menu-card-content">
             <div class="menu-card-header">
               <h3>Dry-Aged Ribeye</h3>
@@ -139,7 +116,7 @@
         </div>
 
         <div class="menu-card animate-on-scroll" data-category="mains">
-          <img src="images/seafood.png" alt="Pan-Seared Salmon" class="menu-card-img">
+          <img src="/images/seafood.png" alt="Pan-Seared Salmon" class="menu-card-img">
           <div class="menu-card-content">
             <div class="menu-card-header">
               <h3>Pan-Seared Salmon</h3>
@@ -150,7 +127,7 @@
         </div>
 
         <div class="menu-card animate-on-scroll" data-category="mains">
-          <img src="images/pasta.png" alt="Lobster Linguine" class="menu-card-img">
+          <img src="/images/pasta.png" alt="Lobster Linguine" class="menu-card-img">
           <div class="menu-card-content">
             <div class="menu-card-header">
               <h3>Lobster Linguine</h3>
@@ -161,7 +138,7 @@
         </div>
 
         <div class="menu-card animate-on-scroll" data-category="mains">
-          <img src="images/steak.png" alt="Lamb Rack" class="menu-card-img">
+          <img src="/images/steak.png" alt="Lamb Rack" class="menu-card-img">
           <div class="menu-card-content">
             <div class="menu-card-header">
               <h3>Herb-Crusted Lamb</h3>
@@ -171,9 +148,8 @@
           </div>
         </div>
 
-        <!-- Desserts -->
         <div class="menu-card animate-on-scroll" data-category="desserts">
-          <img src="images/dessert.png" alt="Dark Chocolate Fondant" class="menu-card-img">
+          <img src="/images/dessert.png" alt="Dark Chocolate Fondant" class="menu-card-img">
           <div class="menu-card-content">
             <div class="menu-card-header">
               <h3>Chocolate Fondant</h3>
@@ -185,7 +161,7 @@
         </div>
 
         <div class="menu-card animate-on-scroll" data-category="desserts">
-          <img src="images/dessert.png" alt="Crème Brûlée" class="menu-card-img">
+          <img src="/images/dessert.png" alt="Crème Brûlée" class="menu-card-img">
           <div class="menu-card-content">
             <div class="menu-card-header">
               <h3>Crème Brûlée</h3>
@@ -219,19 +195,19 @@
       </div>
       <div class="gallery-grid animate-on-scroll">
         <div class="gallery-item">
-          <img src="images/interior.png" alt="Restaurant ambiance" loading="lazy">
+          <img src="/images/interior.png" alt="Restaurant ambiance" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/steak.png" alt="Steak dish" loading="lazy">
+          <img src="/images/steak.png" alt="Steak dish" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/pasta.png" alt="Pasta dish" loading="lazy">
+          <img src="/images/pasta.png" alt="Pasta dish" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/dessert.png" alt="Dessert" loading="lazy">
+          <img src="/images/dessert.png" alt="Dessert" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/seafood.png" alt="Seafood" loading="lazy">
+          <img src="/images/seafood.png" alt="Seafood" loading="lazy">
         </div>
       </div>
     </div>
@@ -271,7 +247,7 @@
               <div class="contact-icon">✉️</div>
               <div>
                 <h4>Email</h4>
-                <p>hello@emberandoak.com</p>
+                <p>hello@nikko.com</p>
               </div>
             </div>
           </div>
@@ -346,51 +322,5 @@
     </div>
   </section>
 
-  <!-- ===== Footer ===== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="#" class="logo">Nikko</a>
-          <p>Fine dining crafted with seasonal ingredients, warm hospitality, and a love for culinary artistry since 2018.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navigate</h4>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#reservation">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Hours</h4>
-          <ul>
-            <li><a>Tue – Fri: 5:30 – 11 PM</a></li>
-            <li><a>Sat – Sun: 5:00 – 11 PM</a></li>
-            <li><a>Monday: Closed</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Follow Us</h4>
-          <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter / X</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Nikko. All rights reserved.</p>
-        <div class="social-links">
-          <a href="#" class="social-link" aria-label="Instagram">📷</a>
-          <a href="#" class="social-link" aria-label="Facebook">📘</a>
-          <a href="#" class="social-link" aria-label="Twitter">🐦</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  <Footer />
+</Layout>
